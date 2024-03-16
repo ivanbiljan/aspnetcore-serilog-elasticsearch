@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zBC51sLED/HcN01oL5C7tU/Ch3YMVhKBHWL1Y1lumcE=",
+  "Source": "AspNetCore.Serilog.ElasticSearch",
+  "BasePath": "_content/AspNetCore.Serilog.ElasticSearch",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
