@@ -1,4 +1,5 @@
 using System.Reflection;
+using AspNetCore.Serilog.ElasticSearch.Infrastructure.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Exceptions;
@@ -8,32 +9,7 @@ using Serilog.Sinks.Elasticsearch;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.UseSerilog(
-    (hostContext, loggerConfiguration) =>
-    {
-        loggerConfiguration.MinimumLevel.Information();
-        loggerConfiguration.MinimumLevel.Override("Microsoft", LogEventLevel.Warning);
-        loggerConfiguration.MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information);
-
-        loggerConfiguration.Enrich.FromLogContext();
-        loggerConfiguration.Enrich.WithMachineName();
-        loggerConfiguration.Enrich.WithEnvironmentName();
-        loggerConfiguration.Enrich.WithExceptionDetails(
-            new DestructuringOptionsBuilder().WithDestructurers(
-                new[]
-                {
-                    new ApiExceptionDestructurer()
-                }));
-
-        loggerConfiguration.WriteTo.Console();
-        loggerConfiguration.WriteTo.Elasticsearch(
-            new ElasticsearchSinkOptions(new Uri(hostContext.Configuration["ElasticSearch:Uri"]!))
-            {
-                AutoRegisterTemplate = true,
-                IndexFormat =
-                    $"{Assembly.GetExecutingAssembly().GetName().Name!.ToLowerInvariant()}-{DateTimeOffset.Now:yyyy-MM}"
-            });
-    });
+builder.Host.ConfigureSerilog();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
