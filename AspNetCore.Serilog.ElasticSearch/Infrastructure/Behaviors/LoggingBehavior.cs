@@ -27,6 +27,9 @@ internal sealed partial class LoggingBehavior<TRequest, TResponse>(
             additionalLogProperties["RemoteIP"] = httpContext.Connection.RemoteIpAddress;
         }
 
+        var requestType = typeof(TRequest);
+        var handlerName = requestType.DeclaringType?.FullName ?? requestType.FullName!;
+
         try
         {
             var response = await next();
@@ -34,7 +37,7 @@ internal sealed partial class LoggingBehavior<TRequest, TResponse>(
 
             using (logger.BeginScope(additionalLogProperties))
             {
-                LogSuccess(logger, typeof(TRequest).FullName!, typeof(TResponse).Name, stopwatch.ElapsedMilliseconds);
+                LogSuccess(logger, handlerName, stopwatch.Elapsed.TotalMilliseconds, response);
             }
 
             return response;
@@ -43,25 +46,25 @@ internal sealed partial class LoggingBehavior<TRequest, TResponse>(
         {
             using (logger.BeginScope(additionalLogProperties))
             {
-                LogFailure(logger, typeof(TRequest).FullName!, typeof(TResponse).Name, stopwatch.ElapsedMilliseconds, ex);
+                LogFailure(logger, handlerName, stopwatch.Elapsed.TotalMilliseconds);
             }
 
             throw;
         }
     }
-
+    
     [LoggerMessage(
+        
         Level = LogLevel.Error,
-        Message = "IRequest<{RequestType}, {ResponseType}> returned an exception after {ElapsedTime} ms: {Exception}")]
-    public static partial void LogFailure(
-        ILogger logger,
-        string requestType,
-        string responseType,
-        long elapsedTime,
-        Exception exception);
+        Message = "{Handler} returned an exception after {ElapsedTime} ms")]
+    public static partial void LogFailure(ILogger logger, string handler, double elapsedTime);
 
     [LoggerMessage(
         Level = LogLevel.Information,
-        Message = "IRequest<{RequestType}, {ResponseType}> executed in {ElapsedTime} ms")]
-    public static partial void LogSuccess(ILogger logger, string requestType, string responseType, long elapsedTime);
+        Message = "{Handler} executed in {ElapsedTime} ms")]
+    public static partial void LogSuccess(
+        ILogger logger,
+        string handler,
+        double elapsedTime,
+        [LogProperties] TResponse response);
 }

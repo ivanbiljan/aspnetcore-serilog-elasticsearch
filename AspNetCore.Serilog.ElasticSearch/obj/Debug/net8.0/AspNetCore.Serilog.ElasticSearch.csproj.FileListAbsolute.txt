@@ -52,3 +52,16 @@ D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearc
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Sinks.PeriodicBatching.dll
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\MediatR.dll
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\MediatR.Contracts.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.AmbientMetadata.Application.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Compliance.Abstractions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Compliance.Redaction.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.AutoActivation.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Telemetry.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.Extensions.Telemetry.Abstractions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\System.IO.Hashing.dll

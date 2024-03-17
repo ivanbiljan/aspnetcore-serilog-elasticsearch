@@ -6,7 +6,8 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Host.ConfigureSerilog();
+builder.EnableLoggingRedaction();
+// builder.();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,15 +33,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSerilogRequestLogging(
-    options =>
-    {
-        options.EnrichDiagnosticContext = static (diagnosticContext, httpContext) =>
-        {
-            diagnosticContext.Set("User", httpContext.User.Identity?.Name);
-            diagnosticContext.Set("RemoteIP", httpContext.Connection.RemoteIpAddress);
-        };
-    });
+// app.UseSerilogRequestLogging(
+//     options =>
+//     {
+//         options.EnrichDiagnosticContext = static (diagnosticContext, httpContext) =>
+//         {
+//             diagnosticContext.Set("User", httpContext.User.Identity?.Name);
+//             diagnosticContext.Set("RemoteIP", httpContext.Connection.RemoteIpAddress);
+//         };
+//     });
 
 app.UseHttpsRedirection();
 
