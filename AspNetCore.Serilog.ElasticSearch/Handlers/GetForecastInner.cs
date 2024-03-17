@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using AspNetCore.Serilog.ElasticSearch.Infrastructure.Persistence;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCore.Serilog.ElasticSearch.Handlers;
 
@@ -11,24 +13,13 @@ public static class GetForecastInner
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 
-    internal sealed class Handler : IRequestHandler<Query, IEnumerable<Dto>>
+    internal sealed class Handler(WeatherContext dbContext) : IRequestHandler<Query, IEnumerable<Dto>>
     {
-        private static readonly string[] Summaries =
-        [
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        ];
-
-        public Task<IEnumerable<Dto>> Handle(Query request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Dto>> Handle(Query request, CancellationToken cancellationToken)
         {
-            return Task.FromResult<IEnumerable<Dto>>(
-                Enumerable.Range(1, 5).Select(
-                        index =>
-                            new Dto(
-                                DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                                Random.Shared.Next(-20, 55),
-                                Summaries[Random.Shared.Next(Summaries.Length)]
-                            ))
-                    .ToArray());
+            return await dbContext.Forecasts
+                .Select(f => new Dto(DateOnly.FromDateTime(f.Date), f.TemperatureC, f.Summary))
+                .ToListAsync(cancellationToken);
         }
     }
 }

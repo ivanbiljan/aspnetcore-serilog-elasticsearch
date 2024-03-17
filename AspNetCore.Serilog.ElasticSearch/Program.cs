@@ -1,12 +1,13 @@
 using AspNetCore.Serilog.ElasticSearch.Handlers;
 using AspNetCore.Serilog.ElasticSearch.Infrastructure.Behaviors;
 using AspNetCore.Serilog.ElasticSearch.Infrastructure.Logging;
+using AspNetCore.Serilog.ElasticSearch.Infrastructure.Persistence;
 using MediatR;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.ConfigureSerilog();
+builder.ConfigureDatabase();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -24,6 +25,13 @@ builder.Services.AddMediatR(
     });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<WeatherContext>();
+    db.Database.EnsureDeleted();
+    db.Database.EnsureCreated(); // Demo purposes
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

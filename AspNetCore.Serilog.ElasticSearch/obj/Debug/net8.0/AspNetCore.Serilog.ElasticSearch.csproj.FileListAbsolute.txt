@@ -53,3 +53,8 @@ D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearc
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\MediatR.dll
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\MediatR.Contracts.dll
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Destructurama.Attributed.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\MySqlConnector.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
