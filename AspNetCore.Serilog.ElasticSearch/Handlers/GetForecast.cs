@@ -1,4 +1,5 @@
 ﻿using AspNetCore.Serilog.ElasticSearch.Infrastructure.Logging;
+using Destructurama.Attributed;
 using MediatR;
 
 namespace AspNetCore.Serilog.ElasticSearch.Handlers;
@@ -7,9 +8,9 @@ public static partial class GetForecast
 {
     public sealed record Query : IRequest<Dto>;
 
-    public sealed record Dto(DateOnly Date, int TemperatureC, [SensitiveData] string? Summary)
+    public sealed record Dto(DateOnly Date, int TemperatureC, string? Summary)
     {
-        [SensitiveData]
+        [LogMasked]
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 

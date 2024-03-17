@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AspNetCore.Serilog.ElasticSearch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4790db4b0fc9e241df3ee313354fc892e2dde904")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa21da43c24cecc03647a416eab959d0e4db3162")]
 [assembly: System.Reflection.AssemblyProductAttribute("AspNetCore.Serilog.ElasticSearch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AspNetCore.Serilog.ElasticSearch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

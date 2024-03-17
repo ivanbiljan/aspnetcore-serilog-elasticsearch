@@ -38,6 +38,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Destructurama.Attributed": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.2.0, )"
@@ -45,18 +49,6 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.3, )"
-            },
-            "Microsoft.Extensions.Compliance.Redaction": {
-              "target": "Package",
-              "version": "[8.3.0, )"
-            },
-            "Microsoft.Extensions.Logging": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Telemetry": {
-              "target": "Package",
-              "version": "[8.3.0, )"
             },
             "Serilog": {
               "target": "Package",
