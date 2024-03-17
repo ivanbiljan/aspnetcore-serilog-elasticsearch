@@ -1,3 +1,4 @@
+using System.Reflection;
 using Serilog;
 using Serilog.Events;
 using Serilog.Exceptions;
@@ -25,6 +26,13 @@ builder.Host.UseSerilog(
                 }));
 
         loggerConfiguration.WriteTo.Console();
+        loggerConfiguration.WriteTo.Elasticsearch(
+            new ElasticsearchSinkOptions(new Uri(hostContext.Configuration["ElasticSearch:Uri"]!))
+            {
+                AutoRegisterTemplate = true,
+                IndexFormat =
+                    $"{Assembly.GetExecutingAssembly().GetName().Name!.ToLowerInvariant()}-{DateTimeOffset.Now:yyyy-MM}"
+            });
     });
 
 // Add services to the container.
