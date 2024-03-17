@@ -1,14 +1,30 @@
 using Serilog;
+using Serilog.Events;
+using Serilog.Exceptions;
+using Serilog.Exceptions.Core;
+using Serilog.Exceptions.Refit.Destructurers;
+using Serilog.Sinks.Elasticsearch;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog(
-    (hostContext, services, loggerConfiguration) =>
+    (hostContext, loggerConfiguration) =>
     {
-        loggerConfiguration.ReadFrom.Configuration(hostContext.Configuration);
-        loggerConfiguration.ReadFrom.Services(services);
+        loggerConfiguration.MinimumLevel.Information();
+        loggerConfiguration.MinimumLevel.Override("Microsoft", LogEventLevel.Warning);
+        loggerConfiguration.MinimumLevel.Override("Microsoft.Hosting.Lifetime", LogEventLevel.Information);
 
         loggerConfiguration.Enrich.FromLogContext();
+        loggerConfiguration.Enrich.WithMachineName();
+        loggerConfiguration.Enrich.WithEnvironmentName();
+        loggerConfiguration.Enrich.WithExceptionDetails(
+            new DestructuringOptionsBuilder().WithDestructurers(
+                new[]
+                {
+                    new ApiExceptionDestructurer()
+                }));
+
+        loggerConfiguration.WriteTo.Console();
     });
 
 // Add services to the container.
@@ -25,7 +41,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSerilogRequestLogging();
+app.UseSerilogRequestLogging(
+    options =>
+    {
+        options.EnrichDiagnosticContext = static (diagnosticContext, httpContext) =>
+        {
+            diagnosticContext.Set("User", httpContext.User.Identity?.Name);
+            diagnosticContext.Set("RemoteIP", httpContext.Connection.RemoteIpAddress);
+        };
+    });
 
 app.UseHttpsRedirection();
 

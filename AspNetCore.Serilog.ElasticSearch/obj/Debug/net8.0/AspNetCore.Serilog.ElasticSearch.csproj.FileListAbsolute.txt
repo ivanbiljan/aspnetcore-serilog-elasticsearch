@@ -42,3 +42,11 @@ D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearc
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\obj\Debug\net8.0\AspNetCore.Serilog.ElasticSearch.pdb
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\obj\Debug\net8.0\AspNetCore.Serilog.ElasticSearch.genruntimeconfig.cache
 D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\obj\Debug\net8.0\ref\AspNetCore.Serilog.ElasticSearch.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Elasticsearch.Net.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Refit.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Enrichers.Environment.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Exceptions.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Exceptions.Refit.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Formatting.Elasticsearch.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Sinks.Elasticsearch.dll
+D:\Source\Repos\AspNetCore.Serilog.ElasticSearch\AspNetCore.Serilog.ElasticSearch\bin\Debug\net8.0\Serilog.Sinks.PeriodicBatching.dll
