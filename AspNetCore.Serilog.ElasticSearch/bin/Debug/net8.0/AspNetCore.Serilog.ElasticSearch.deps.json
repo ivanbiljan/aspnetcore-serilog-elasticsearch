@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "AspNetCore.Serilog.ElasticSearch/1.0.0": {
         "dependencies": {
+          "MediatR": "12.2.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.3",
           "Serilog": "3.1.1",
           "Serilog.AspNetCore": "8.0.1",
@@ -32,6 +33,26 @@
           "lib/netstandard2.1/Elasticsearch.Net.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.17.5.0"
+          }
+        }
+      },
+      "MediatR/12.2.0": {
+        "dependencies": {
+          "MediatR.Contracts": "2.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/MediatR.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.2.0.0"
+          }
+        }
+      },
+      "MediatR.Contracts/2.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
           }
         }
       },
@@ -389,6 +410,20 @@
       "sha512": "sha512-orChsQi1Ceho/NyIylNOn6y4vuGcsbCfMZnCueNN0fzqYEGQmQdPfcVmsR5+3fwpXTgxCdjTUVmqOwvHpCSB+Q==",
       "path": "elasticsearch.net/7.17.5",
       "hashPath": "elasticsearch.net.7.17.5.nupkg.sha512"
+    },
+    "MediatR/12.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8TUFrHapKi6D74PhnSNEguRsH91HNGyP3R4ZQdgDorJgl9Wac5Prh0vA33QfrniAaS6L2xNNhc6vxzg+5AIbwA==",
+      "path": "mediatr/12.2.0",
+      "hashPath": "mediatr.12.2.0.nupkg.sha512"
+    },
+    "MediatR.Contracts/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
+      "path": "mediatr.contracts/2.0.1",
+      "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/8.0.3": {
       "type": "package",
